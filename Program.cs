@@ -18,13 +18,18 @@ while (true)
         Console.WriteLine(updates[i].Message.From.FirstName);
         Console.WriteLine(updates[i].Message.From.Username);
 
-        if(updates[i].Message.Text == "Привет")
+        if (updates[i].Message.Text == "Привет")
         {
-            await client.SendTextMessageAsync(updates[i].Message.From.Id, "И тебе привет?");
+            await client.SendTextMessageAsync(updates[i].Message.From.Id, "И тебе привет, кожаный мешок с костями");
+        }
+
+        if (updates[i].Message.Text == "Кто ты?")
+        {
+            await client.SendTextMessageAsync(updates[i].Message.From.Id, "Я - тестовый телеграм бот");
         }
         else
         {
-            await client.SendTextMessageAsync(updates[i].Message.From.Id, "Спасибо за помощь");
+            await client.SendTextMessageAsync(updates[i].Message.From.Id, "Я тебя не понимаю, кожаный ублюдок. Спроси нормально");
         }
 
     }
